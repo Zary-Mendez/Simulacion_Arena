@@ -279,7 +279,6 @@ public class GameManager : MonoBehaviour
 
         /*
          * La arena aparece únicamente en las filas superiores.
-         * Constituyen la condición inicial del sistema.
          */
         int rows = Mathf.Clamp(initialSandRows, 1, height);
         int firstRow = height - rows;
