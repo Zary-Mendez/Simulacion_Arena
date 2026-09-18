@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 3
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
@@ -464,7 +464,8 @@ MonoBehaviour:
   width: 80
   height: 60
   updateTime: 0.1
-  cellPrefab: {fileID: 6618312292374872336, guid: 1ad8557202eec5a48960f9a24a3c0d39, type: 3}
+  initialSandChance: 0.118
+  initialSandRows: 80
 --- !u!4 &743813365
 Transform:
   m_ObjectHideFlags: 0

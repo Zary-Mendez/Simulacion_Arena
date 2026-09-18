@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
     private Color32[] pixels;
 
     private static readonly Color32 SandColor =
-        new Color32(224, 185, 95, 255);
+        new Color32(224, 207, 181, 255);
 
     private static readonly Color32 EmptyColor =
-        new Color32(35, 40, 48, 255);
+        new Color32(77, 166, 255, 255);
 
     void Start()
     {
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         if (!grid[x, y])
             return;
 
-        // Regla 1: caída vertical.
+        // Caída vertical.
         if (IsEmpty(x, y - 1))
         {
             MoveParticle(x, y, x, y - 1);
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         bool canMoveLeft = IsEmpty(x - 1, y - 1);
         bool canMoveRight = IsEmpty(x + 1, y - 1);
 
-        // Regla 3.1: ambas diagonales están libres.
+        // Ambas diagonales están libres.
         if (canMoveLeft && canMoveRight)
         {
             if (Random.value < 0.5f)
@@ -130,14 +130,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // Regla 3.2: solamente abajo-izquierda está libre.
+        // Solamente abajo-izquierda está libre.
         if (canMoveLeft)
         {
             MoveParticle(x, y, x - 1, y - 1);
             return;
         }
 
-        // Regla 3.3: solamente abajo-derecha está libre.
+        // Solamente abajo-derecha está libre.
         if (canMoveRight)
         {
             MoveParticle(x, y, x + 1, y - 1);
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         }
 
         /*
-         * Regla 4: si abajo y las dos diagonales están
+         * Si abajo y las dos diagonales están
          * ocupadas, no se realiza ningún movimiento.
          */
     }
@@ -279,7 +279,7 @@ public class GameManager : MonoBehaviour
 
         /*
          * La arena aparece únicamente en las filas superiores.
-         * Estas constituyen la condición inicial del sistema.
+         * Constituyen la condición inicial del sistema.
          */
         int rows = Mathf.Clamp(initialSandRows, 1, height);
         int firstRow = height - rows;
